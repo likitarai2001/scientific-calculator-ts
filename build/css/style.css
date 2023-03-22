@@ -1,0 +1,101 @@
+.container{
+    margin-top: 2%;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc{
+    padding: 5px;
+    background-color: #f2f4f4;
+}
+
+#display{
+    width: 100%;
+    max-width: 380px;
+    height: 100px;
+    text-align: right;
+    font-size: 60px;
+    font-weight: 700;
+    color: black;
+    border: none;
+    padding-right: 6px;
+    background-color: #f2f4f4;
+}
+
+#display::placeholder{
+    color: black;
+}
+
+.row{
+    width: 100%;
+}
+
+button{
+    font-size: 16px;
+}
+
+.btn{
+    width: 19%;
+    border: none;
+    padding: 10px;
+    margin: 2px 0px;
+    border-radius: 2px;
+}
+
+.btn-deg, .btn-fe{
+    width: 20%;
+    background-color: #f2f4f6;
+}
+
+.btn-opr{
+    font-size: medium;
+}
+
+.bgcolor{
+    background-color: #f2f4f6;
+}
+
+.fontWt{
+    font-weight: 900;
+}
+
+.btnDark{
+    color : #999595;
+    font-weight: 900;
+}
+
+.btn-trig, .btn-func{
+    width: 39%;
+    border: none;
+    padding: 10px 0px;
+    background-color: #f2f4f6;
+}
+
+.btn-white{
+    background-color: rgb(255, 255, 255);
+    font-weight: 900;
+}
+
+.btn-equal{
+    background-color: cornflowerblue;
+}
+
+#trignometry, #function{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+select option{
+    background-color: white;
+    color: black;
+}
+
+button:hover, #trignometry:hover, #function:hover{
+    background-color: #4db8ff;
+    color: white;
+}

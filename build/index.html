@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scientific Calculator</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="calc">
+            <div class="display">
+                <input type="text" id="display" placeholder="0" value="0">
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-deg" id="deg_rad" onclick="deg_rad()">DEG</button>
+                <button type="button" class="btn btn-fe" id="fixedToExp" onclick="fixedToExp()">F-E</button>
+            </div>
+            <div class="row">
+                <button type="button" id="mc" class="btn bgcolor btnDark" onclick="mc()">MC</button>
+                <button type="button" id="mr" class="btn bgcolor btnDark" onclick="mr()">MR</button>
+                <button type="button" id="mplus" class="btn bgcolor fontWt" onclick="m_plus()">M+</button>
+                <button type="button" id="mminus" class="btn bgcolor fontWt" onclick="m_minus()">M-</button>
+                <button type="button" id="ms" class="btn bgcolor fontWt" onclick="ms()">MS</button>
+            </div>
+            <div class="row">
+                <button type="button" class="btn-trig">
+                    <select id="trignometry" name="trignometry" onchange="trignometry()">
+                        <option value="" id="trig_dropdown" selected disabled>&ang; Trignometry</option>
+                        <option id="sin" value="sin(">sin(x)</option>
+                        <option id="cos" value="cos(">cos(x)</option>
+                        <option id="tan" value="tan(">tan(x)</option>
+                        <option id="tan" value="cosec(">cosec(x)</option>
+                        <option id="tan" value="sec(">sec(x)</option>
+                        <option id="tan" value="cot(">cot(x)</option>
+                    </select>
+                </button>
+                <button type="button" class="btn-func">
+                    <select id="function" name="function" onchange="func()">
+                        <option value="" id="func_dropdown" selected disabled>ƒ Function</option>
+                        <option id="abs" value="abs(">abs(x)</option>
+                        <option id="floor" value="floor(">floor(x)</option>
+                        <option id="ceil" value="ceil(">ceil(x)</option>
+                    </select>
+                </button>
+            </div>
+            <div class="row">
+                <button type="button" class="btn" style="padding: 4.2px 10px 10px 10px;" id="toggleOperations" onclick="toggleOperations()">2<sup>nd</sup></button>
+                <button type="button" class="btn" id="pi" onclick="pi()">&pi;</button>
+                <button type="button" class="btn" id="e" onclick="eValue()">e</button>
+                <button type="button" class="btn" id="clear" onclick="clr()">C</button>
+                <button type="button" class="btn" id="backspace" onclick="backspace()">DEL</button>
+            </div>
+            <div class="row">
+                <button type="button" class="btn option1" style="padding: 4.2px 10px 10px 10px;" id="xsq" onclick="xsq()">x<sup>2</sup></button>
+                <button type="button" class="btn option2" style="display:none; padding: 4.2px 10px 10px;" id="xcube" onclick="xcube()">x<sup>3</sup></button>
+                <button type="button" class="btn" id="oneByX" onclick="oneByX()">1/x</button>
+                <button type="button" class="btn" id="modulus" onclick="modulus()">| x |</button>
+                <button type="button" class="btn" id="exp" onclick="exp()">exp</button>
+                <button type="button" class="btn" id="mod" value="%">mod</button>
+            </div>
+            <div class="row">
+                <button type="button" class="btn option1" id="sqroot" onclick="sqroot()">&#8730;x</button>
+                <button type="button" class="btn option2" style="display:none; padding: 7.7px 10px 10px;" id="cuberoot" onclick="cuberoot()">&#8731;x</button>
+                <button type="button" class="btn" value="(">(</button>
+                <button type="button" class="btn" value=")">)</button>
+                <button type="button" class="btn" id="fact" onclick="fact()">n!</button>
+                <button type="button" class="btn btn-opr" value="/">&divide;</button>
+            </div>
+            <div class="row">
+                <button type="button" class="btn option1" style="padding: 4.2px 10px 10px 10px;" value="**">x<sup>y</sup></button>
+                <button type="button" class="btn option2" style="display:none;" id="ythroot" value=" y root ">y&#8730;x</button>
+                <button type="button" class="btn btn-white fontWt" value="7">7</button>
+                <button type="button" class="btn btn-white fontWt" value="8">8</button>
+                <button type="button" class="btn btn-white fontWt" value="9">9</button>
+                <button type="button" class="btn btn-opr" value="*">*</button>
+            </div>
+            <div class="row">
+                <button type="button" class="btn option1" style="padding: 4.2px 10px 10px 10px;" id="tenPowX" onclick="tenPowX()">10<sup>x</sup></button>
+                <button type="button" class="btn option2" style="display:none; padding: 4.2px 10px 10px;" id="twoPowX" onclick="twoPowX()">2<sup>x</sup></button>
+                <button type="button" class="btn btn-white fontWt" value="4">4</button>
+                <button type="button" class="btn btn-white fontWt" value="5">5</button>
+                <button type="button" class="btn btn-white fontWt" value="6">6</button>
+                <button type="button" class="btn btn-opr" value="-">-</button>
+            </div>
+            <div class="row">
+                <button type="button" class="btn option1" id="log" onclick="log()">log</button>
+                <button type="button" class="btn option2" style="display:none; padding: 10.2px 10px 7.8px 10px;" id="logXbaseY" value=" log base ">log<sub>y</sub>x</button>
+                <button type="button" class="btn btn-white fontWt" value="1">1</button>
+                <button type="button" class="btn btn-white fontWt" value="2">2</button>
+                <button type="button" class="btn btn-white fontWt" value="3">3</button>
+                <button type="button" class="btn btn-opr" value="+">+</button>
+            </div>
+            <div class="row">
+                <button type="button" class="btn option1" id="ln" onclick="ln()">ln</button>
+                <button type="button" class="btn option2" style="display:none; padding: 4.4px 10px 10px;" id="ePowX" onclick="exp()">e<sup>x</sup></button>
+                <button type="button" class="btn btn-white" id="toggleSign" onclick="toggleSign()">+/-</button>
+                <button type="button" class="btn btn-white fontWt" value="0">0</button>
+                <button type="button" class="btn btn-white" value=".">.</button>
+                <button type="button" class="btn btn-equal" id="equal" onclick="equal()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
